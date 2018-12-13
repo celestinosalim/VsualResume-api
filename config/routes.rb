@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :skill_tools
+  resources :skill_interpersonals
+  resources :skill_others
   resources :projects
   resources :skills
   resources :experiences
