@@ -1,4 +1,4 @@
 class SocialMediumSerializer < ActiveModel::Serializer
-  attributes :id, :name, :logo
+  attributes :name, :logo
   has_one :resume
 end

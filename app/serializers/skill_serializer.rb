@@ -1,4 +1,4 @@
 class SkillSerializer < ActiveModel::Serializer
-  attributes :id, :skill_other, :skill_tool, :skill_interpersonal
+  attributes :others, :tools, :interpersonals
   has_one :resume
 end

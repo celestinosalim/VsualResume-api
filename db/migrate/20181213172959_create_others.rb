@@ -1,6 +1,6 @@
-class CreateSkillOthers < ActiveRecord::Migration[5.2]
+class CreateOthers < ActiveRecord::Migration[5.2]
   def change
-    create_table :skill_others do |t|
+    create_table :others do |t|
       t.belongs_to :skill, foreign_key: true
       t.string :name
 

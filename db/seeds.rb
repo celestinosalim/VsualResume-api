@@ -1,3 +1,18 @@
+# SocialMedium.destroy_all
+# Tool.destroy_all
+# Other.destroy_all
+# Interpersonal.destroy_all
+# Skill.destroy_all
+# Project.destroy_all
+# Profile.destroy_all
+# Experience.destroy_all
+# Education.destroy_all
+# Resume.destroy_all
+# User.destroy_all
+
+
+
+
 User.create!({
     username: "alex",
     email: "alex@alex.com",
@@ -7,17 +22,11 @@ User.create!({
 })
 
 Resume.create!({
-    name: "resume",
-    user_id: 1,
-    profile_id:1,
-    social_media_id:1,
-    education_id:1,
-    experience_id:1,
-    project_id:1,
-    skill_id:1,
+    user_id: 1
 })
 
 Education.create!({
+    resume_id: 1,
     start_date: "05-23-1992",
     end_date: "05-23-2018",
     location: "81 prospect st",
@@ -27,6 +36,7 @@ Education.create!({
 })
 
 Experience.create!({
+    resume_id: 1,
     start_date: "01-21-1998",
     end_date: "01-21-2017",
     location: "81 prospect st",
@@ -36,6 +46,7 @@ Experience.create!({
 })
 
 Profile.create!({
+    resume_id: 1,
     name: "Celestino Salim",
     age: 26,
     location: "828 saint johns pl",
@@ -48,6 +59,7 @@ Profile.create!({
 })
 
 Project.create!({
+    resume_id: 1,
     name: "Alex Project",
     url: "http://adsasdasdas.com",
     description: "my first cool project"
@@ -55,29 +67,30 @@ Project.create!({
 
 
 Skill.create!({
-    name: "skill",
-    skill_other_id: 1,
-    skill_tools_id: 1,
-    skill_interpersonal_id: 1
+    resume_id: 1
 })
 
 
-SkillInterpersonal.create!({
+Interpersonal.create!({
+    skill_id: 1,
     name: "good person"
 })
 
-SkillOther.create!({
+Other.create!({
+    skill_id: 1,
     name: "French"
 })
 
 
-SkillTool.create!({
+Tool.create!({
+    skill_id: 1,
     name: "javascript"
 })
 
 
 
 SocialMedium.create!({
+    resume_id: 1,
     name: "facebook",
     logo: "http://facebook/com"
 })
