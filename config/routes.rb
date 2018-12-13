@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :resumes
   scope "/api" do
     resources :users, only: [:create]
     post '/login', to: 'auth#create'
