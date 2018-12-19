@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
   skip_before_action :authorized
-
+  before_action :set_resume, only: %i[show update]
+  
   # GET /resumes
   def index
     @resumes = Resume.all
@@ -10,6 +11,7 @@ class ResumesController < ApplicationController
 
   # GET /resumes/1
   def show
+    
     render json: @resume
   end
 
@@ -26,6 +28,7 @@ class ResumesController < ApplicationController
 
   # PATCH/PUT /resumes/1
   def update
+    
     if @resume.update(resume_params)
       render json: @resume
     else
@@ -34,9 +37,9 @@ class ResumesController < ApplicationController
   end
 
   # DELETE /resumes/1
-  def destroy
-    @resume.destroy
-  end
+  # def destroy
+  #   @resume.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
