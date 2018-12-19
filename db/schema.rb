@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "educations", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "start_date"
-    t.string "end_date"
-    t.string "location"
-    t.string "degree"
-    t.string "university"
-    t.string "description"
+    t.string "start_date", default: "mm/dd/yyyy"
+    t.string "end_date", default: "mm/dd/yyyy"
+    t.string "location", default: "Address, City, State, Zip"
+    t.string "degree", default: "Degree"
+    t.string "university", default: "Institution"
+    t.string "description", default: "Studied a variety of ..."
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_educations_on_resume_id"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "experiences", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "start_date"
-    t.string "end_date"
-    t.string "location"
-    t.string "role"
-    t.string "company"
-    t.string "description"
+    t.string "start_date", default: "mm/dd/yyyy"
+    t.string "end_date", default: "mm/dd/yyyy"
+    t.string "location", default: "Address, City, State, Zip"
+    t.string "role", default: "Position"
+    t.string "company", default: "Institution"
+    t.string "description", default: "Responsible for  ..."
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_experiences_on_resume_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "interpersonals", force: :cascade do |t|
     t.bigint "skill_id"
-    t.string "name"
+    t.string "name", default: "Teamwork"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_interpersonals_on_skill_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "others", force: :cascade do |t|
     t.bigint "skill_id"
-    t.string "name"
+    t.string "name", default: "Leadership"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_others_on_skill_id"
@@ -59,14 +59,14 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "profiles", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "name"
-    t.integer "age"
-    t.string "location"
-    t.string "number"
-    t.string "profile_picture"
-    t.string "headline"
-    t.string "about_me"
-    t.string "background_image"
+    t.string "name", default: "Name"
+    t.integer "age", default: 26
+    t.string "location", default: "Address"
+    t.string "number", default: "Format: 000-000-0000"
+    t.string "profile_picture", default: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+    t.string "headline", default: "Able to sit in my chair for extended periods of time without numbness or fatigue."
+    t.string "about_me", default: "I am awesome, amazing, beautiful and confident I don’t need someone to make me realize it!"
+    t.string "background_image", default: "https://images.all-free-download.com/images/graphicthumb/gorgeous_stage_background_03_hd_pictures_169914.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_profiles_on_resume_id"
@@ -74,9 +74,10 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "projects", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "name"
-    t.string "url"
-    t.string "description"
+    t.string "name", default: "Name"
+    t.string "url", default: "https://myprojecturl.com"
+    t.string "image", default: "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg"
+    t.string "description", default: "Formally written declaration of the project and its idea and context to explain the goals and objectives to be reached"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_projects_on_resume_id"
@@ -98,8 +99,8 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "social_media", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "name"
-    t.string "logo"
+    t.string "name", default: "MySocialMedia"
+    t.string "logo", default: "https://www.freelogodesign.org/Content/img/logo-ex-7.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_social_media_on_resume_id"
@@ -107,7 +108,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   create_table "tools", force: :cascade do |t|
     t.bigint "skill_id"
-    t.string "name"
+    t.string "name", default: "GitHub"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_tools_on_skill_id"

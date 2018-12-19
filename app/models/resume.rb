@@ -14,4 +14,17 @@ class Resume < ApplicationRecord
   has_many :tools, through: :skills
   has_many :others, through: :skills
   has_many :interpersonals, through: :skills
+
+  after_create :build_everything
+
+  
+
+  def build_everything
+    Education.create(resume: self) 
+    SocialMedium.create(resume: self) 
+    Profile.create(resume: self) 
+    Project.create(resume: self) 
+    Experience.create(resume: self) 
+    Skill.create(resume: self) 
+  end
 end
