@@ -16,6 +16,7 @@ class AuthController < ApplicationController
     private
 
     def user_login_params
+        # byebug
         # params { user: {username: 'Chandler Bing', password: 'hi' } }
         params.require(:user).permit(:username, :password)
     end

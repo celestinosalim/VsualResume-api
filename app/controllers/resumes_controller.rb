@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: [:show, :update, :destroy]
+  skip_before_action :authorized
 
   # GET /resumes
   def index
