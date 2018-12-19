@@ -1,5 +1,4 @@
 class ResumeSerializer < ActiveModel::Serializer
-  attributes :id
   has_one :profile
   # alias_attribute :social_medium, :media
   has_many :social_medium
