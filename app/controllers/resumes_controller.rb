@@ -4,6 +4,7 @@ class ResumesController < ApplicationController
   
   # GET /resumes
   def index
+    
     @resumes = Resume.all
 
     render json: @resumes
@@ -49,6 +50,7 @@ class ResumesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def resume_params
-      params.require(:resume).permit(:user_id, :education, :skill, :experience, :project, :profile, :social_media)
+      params.require(:resume).permit(:user_id, :education, :skill, :experience, :project, :social_media, :profile_attributes => [:id, :name, :age, :location, :number, :profile_picture, :background_image, :about_me, :headline ])
     end
 end
+

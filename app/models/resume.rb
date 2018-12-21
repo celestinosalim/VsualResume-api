@@ -5,7 +5,7 @@ class Resume < ApplicationRecord
   has_many :social_medium
   accepts_nested_attributes_for :social_medium, :allow_destroy => true
   has_one :profile
-  accepts_nested_attributes_for :profile, :allow_destroy => true
+  accepts_nested_attributes_for :profile, update_only: true
   has_many :projects
   accepts_nested_attributes_for :projects, :allow_destroy => true
   has_many :experiences

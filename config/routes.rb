@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   scope "/api" do
-    resources :users, only: [:create]
+    resources :users, only: [:create, :index]
     resources :tools
     resources :interpersonals
     resources :others
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :resumes
     post '/login', to: 'auth#create'
     get '/profile', to: 'users#profile'
+    get '/userResume', to: 'users#userResume'
   end
 
 end
