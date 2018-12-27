@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_173012) do
     t.string "headline", default: "Able to sit in my chair for extended periods of time without numbness or fatigue."
     t.string "about_me", default: "I am awesome, amazing, beautiful and confident I don’t need someone to make me realize it!"
     t.string "background_image", default: "https://images.all-free-download.com/images/graphicthumb/gorgeous_stage_background_03_hd_pictures_169914.jpg"
+    t.string "profile_email", default: "example@gmail.com"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_profiles_on_resume_id"

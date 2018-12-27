@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :headline,  default: 'Able to sit in my chair for extended periods of time without numbness or fatigue.'
       t.string :about_me, default: 'I am awesome, amazing, beautiful and confident I don’t need someone to make me realize it!'
       t.string :background_image, default: 'https://images.all-free-download.com/images/graphicthumb/gorgeous_stage_background_03_hd_pictures_169914.jpg'
-
+      t.string :profile_email, default: "example@gmail.com"
       t.timestamps
     end
   end
