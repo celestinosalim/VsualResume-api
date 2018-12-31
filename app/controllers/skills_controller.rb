@@ -1,6 +1,7 @@
 class SkillsController < ApplicationController
+  skip_before_action :authorized
   before_action :set_skill, only: [:show, :update, :destroy]
-
+  
   # GET /skills
   def index
     @skills = Skill.all
@@ -46,6 +47,6 @@ class SkillsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def skill_params
-      params.require(:skill).permit(:resume_id, :skill_other, :skill_tool, :skill_interpersonal)
+      params.require(:skill).permit(:resume_id, :tools_attributes => [:id, :name])
     end
 end

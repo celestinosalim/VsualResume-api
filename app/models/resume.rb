@@ -10,12 +10,16 @@ class Resume < ApplicationRecord
   accepts_nested_attributes_for :projects, :allow_destroy => true
   has_many :experiences
   accepts_nested_attributes_for :experiences, :allow_destroy => true
+
   has_many :skills
+  accepts_nested_attributes_for :skills, :allow_destroy => true
   has_many :tools, through: :skills
   has_many :others, through: :skills
   has_many :interpersonals, through: :skills
+  
 
   after_create :build_everything
+
 
   
 
@@ -26,5 +30,9 @@ class Resume < ApplicationRecord
     Project.create(resume: self) 
     Experience.create(resume: self) 
     Skill.create(resume: self) 
+    Tool.create(skill: self.skills.last) 
+    Interpersonal.create(skill: self.skills.last)
+    Other.create(skill: self.skills.last)
   end
+  
 end

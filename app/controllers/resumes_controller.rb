@@ -38,6 +38,12 @@ class ResumesController < ApplicationController
       if resume_params.include?(:projects_attributes)
         @resume.projects.destroy_all    
         end
+        if resume_params.include?(:skills_attributes)
+          @resume.tools.where.not(id: 1).destroy_all
+          @resume.interpersonals.where.not(id: 1).destroy_all
+          @resume.others.where.not(id: 1).destroy_all
+        end
+          
     if @resume.update(resume_params)
       render json: @resume
     else
@@ -58,7 +64,12 @@ class ResumesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def resume_params
-      params.require(:resume).permit(:user_id, :skill, :experience, :project, :social_media, :profile_attributes => [:id, :name, :age, :location, :number, :profile_picture, :background_image, :about_me, :headline ], :educations_attributes => [:id, :start_date, :end_date, :location, :degree, :university, :description ], :experiences_attributes => [:id, :start_date, :end_date, :location, :role, :company, :description ], :projects_attributes => [:id, :name, :url, :description, :image])
+      params.require(:resume).permit(:user_id, :skill, :experience, :project, :social_media,
+        :profile_attributes => [:id, :name, :age, :location, :number, :profile_picture, :background_image, :about_me, :headline ],
+        :educations_attributes => [:id, :start_date, :end_date, :location, :degree, :university, :description ],
+        :experiences_attributes => [:id, :start_date, :end_date, :location, :role, :company, :description ],
+        :projects_attributes => [:id, :name, :url, :description, :image],
+        :skills_attributes => [:id, :tools_attributes => [:id, :name], :interpersonals_attributes => [:id, :name], :others_attributes => [:id, :name]])
     end
 end
 
