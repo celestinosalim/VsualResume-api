@@ -58,7 +58,7 @@ class ResumesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def resume_params
-      params.require(:resume).permit(:user_id, :skill, :experience, :project, :social_media, :profile_attributes => [:id, :name, :age, :location, :number, :profile_picture, :background_image, :about_me, :headline ], :educations_attributes => [:id, :start_date, :end_date, :location, :degree, :university, :description ], :experiences_attributes => [:id, :start_date, :end_date, :location, :role, :company, :description ], :projects_attributes => [:id, :name, :url, :desciption, :image])
+      params.require(:resume).permit(:user_id, :skill, :experience, :project, :social_media, :profile_attributes => [:id, :name, :age, :location, :number, :profile_picture, :background_image, :about_me, :headline ], :educations_attributes => [:id, :start_date, :end_date, :location, :degree, :university, :description ], :experiences_attributes => [:id, :start_date, :end_date, :location, :role, :company, :description ], :projects_attributes => [:id, :name, :url, :description, :image])
     end
 end
 
