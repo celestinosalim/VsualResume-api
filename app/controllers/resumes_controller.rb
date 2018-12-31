@@ -43,6 +43,9 @@ class ResumesController < ApplicationController
           @resume.interpersonals.where.not(id: 1).destroy_all
           @resume.others.where.not(id: 1).destroy_all
         end
+        if resume_params.include?(:social_medium_attributes)
+          @resume.social_medium.destroy_all    
+          end
           
     if @resume.update(resume_params)
       render json: @resume
@@ -69,6 +72,7 @@ class ResumesController < ApplicationController
         :educations_attributes => [:id, :start_date, :end_date, :location, :degree, :university, :description ],
         :experiences_attributes => [:id, :start_date, :end_date, :location, :role, :company, :description ],
         :projects_attributes => [:id, :name, :url, :description, :image],
+        :social_medium_attributes => [:id, :name],
         :skills_attributes => [:id, :tools_attributes => [:id, :name], :interpersonals_attributes => [:id, :name], :others_attributes => [:id, :name]])
     end
 end
