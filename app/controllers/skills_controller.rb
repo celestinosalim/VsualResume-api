@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-  skip_before_action :authorized
+  # skip_before_action :authorized
   before_action :set_skill, only: [:show, :update, :destroy]
   
   # GET /skills
