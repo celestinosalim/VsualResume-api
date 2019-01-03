@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.belongs_to :resume, foreign_key: true
       t.string :name, default: 'Name'
       t.string :url, default: 'https://myprojecturl.com'
-      t.string :image, default: 'https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg'
+      t.string :image, default: "https://organicthemes.com/wp-content/uploads/2013/10/website-construction.jpg"
       t.string :description, default: 'Formally written declaration of the project and its idea and context to explain the goals and objectives to be reached'
 
       t.timestamps
