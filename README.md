@@ -1,24 +1,30 @@
-# README
+# API for - [VsualResume](https://github.com/celestinosalim/VsualResume)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Retail site for on demand meal delivery, Created for a company located in Miami, FL as a proposal for scaling their business.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+production site: https://cook-time.herokuapp.com/.
 
-* System dependencies
+To get started fork & clone down the https://github.com/celestinosalim/Cook-Time-Api run bundle install then rails server -p 3001 to start the server.
+Once you have the backend running you can fork this repo, clone it down and run npm install to install all the packages used in this project & npm start to start the client.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+As mention before you will need the back end up and running in port 3001.
+Then npm install & npm start.
 
-* Database initialization
+## Deployment
 
-* How to run the test suite
+This app is deployed on Heroku.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
+- [React](https://reactjs.org) - Web Framework.
+- [CSS] - Used for styling.
+- [Bootstrap](https://getbootstrap.com/) - Used for styling.
+- [Knock](https://github.com/nsarno/knock) - Seamless JWT authentication for Rails API.
 
-* ...
+## Authors
+
+- **Celestino Salim**
