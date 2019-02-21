@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
-  skip_before_action :authorized, only: %i[show]
-  before_action :set_resume, only: %i[show update]
+  skip_before_action :authorized, only: %i[index show]
+  before_action :set_resume, only: %i[update]
+  before_action :set_user_resume, only: %i[show]
   
   # GET /resumes
   def index
@@ -12,8 +13,8 @@ class ResumesController < ApplicationController
 
   # GET /resumes/1
   def show
-    
-    render json: @resume
+    render json: @user.resume
+  
   end
 
   # POST /resumes
@@ -29,6 +30,7 @@ class ResumesController < ApplicationController
 
   # PATCH/PUT /resumes/1
   def update
+    
     if resume_params.include?(:educations_attributes)
     @resume.educations.destroy_all    
     end
@@ -63,6 +65,11 @@ class ResumesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_resume
       @resume = Resume.find(params[:id])
+      
+    end
+
+    def set_user_resume
+      @user = User.find_by(username: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

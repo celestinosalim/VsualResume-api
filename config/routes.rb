@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :educations
     resources :social_media
     resources :profiles
-    resources :resumes
+    resources :resumes, param: :user_id, param: :id
     post '/login', to: 'auth#create'
     get '/profile', to: 'users#profile'
     get '/userResume', to: 'users#userResume'
