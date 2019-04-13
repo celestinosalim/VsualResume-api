@@ -17,5 +17,4 @@ Rails.application.routes.draw do
     get '/profile', to: 'users#profile'
     get '/userResume', to: 'users#userResume'
   end
-
 end
