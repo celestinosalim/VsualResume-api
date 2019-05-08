@@ -1,24 +1,14 @@
-# README
+# API for [VsualResume](https://github.com/celestinosalim/VsualResume)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+To get started fork & clone down this repo. Run bundle install then rails server -p 3001 to start the server.
 
-* Ruby version
 
-* System dependencies
+## Built With
+- [Ruby On Rails](https://rubyonrails.org/) - Framework.
+- [JWT](https://jwt.io/) - Token Authentication.
 
-* Configuration
+## Authors
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- **Celestino Salim**
