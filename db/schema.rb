@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_183527) do
+ActiveRecord::Schema.define(version: 2019_05_08_013003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_183527) do
     t.string "logo", default: "https://www.freelogodesign.org/Content/img/logo-ex-7.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
     t.index ["resume_id"], name: "index_social_media_on_resume_id"
   end
 
