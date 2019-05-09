@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_08_013003) do
+ActiveRecord::Schema.define(version: 2018_12_13_173012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 2019_05_08_013003) do
     t.string "name", default: "Name"
     t.integer "age", default: 26
     t.string "location", default: "Address"
-    t.string "number", default: "Format: 000-000-0000"
+    t.string "number", default: "000-000-0000"
     t.string "profile_picture", default: "https://theimag.org/wp-content/uploads/2015/01/user-icon-png-person-user-profile-icon-20-300x300.png"
-    t.string "headline", default: "Able to sit in my chair for extended periods of time without numbness or fatigue."
+    t.string "headline", default: "Full Stack Web Developer"
     t.string "about_me", default: "I am awesome, amazing, beautiful and confident I don’t need someone to make me realize it!"
     t.string "background_image", default: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwcICA0HBwgHBwcHBw0HBwcHBw8ICQcKFREWFhUREx8YKCggGCYlGxMTITEhJSkrLi4uFx8zODMtNygtLjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAgMEAQUG/8QAGRABAQEBAQEAAAAAAAAAAAAAAAECAxEx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APtHYJSAlmLsZQxGjnkE+eWnnhDnlq55BLnhoxlzGV2YDucrJCRKQCRKQjoA6AAAAAAAAAAA4OgIWOWJuWAqsVay0WK9QGXeWbphu1lR0yDzumGbpl6HTLL0yDFuKtRp3lTqAqcSqIOxZmI5i3EBZiNPPKrnGrnkFvPLVzyq55acQE8ZXZiOYskB2RKORIB0AAAAAAAAAAAAAAAHHQEKjYsqNgKdRTvLTYq3AYumWXplv6ZZeuQYOmWfcbOuWbcBm1EVmohYCWYuxFeV/OAu5xr5xRyjXygLucacRVzi/EBPMTjkSgOxJx0AAAAAAAAAAAAAAAAAAHHKk5QQsV6i2q9QGfcZusbNxm6QGHrGTpG/rGPpAZNxXYu3FVgJ4aOcUYaecBp5Rr5Rm5Rr5QF+IvyqxF2QTiURicAjoAAAAAAAAAAAAAAAAAAAOOuUHKhpOo0FO4z9I06UdIDH1jH1jd1jJ1gMXSKa0dIooJ4aeTPhp5A1cmvmy8mvkDRhdlVhbkE4kjEoDoAAAAAAAAAAAAAAAAAAAAAI1Gp1Cgr0o20aUbBk6snVs6snUGPoorR0UX6CWGnmzYaeQNfJr5MnJr5g04W5U4XZBOJRGJA6AAAAAAAAAAAAAAAAAAAAADlQqVRoIaUbXaU7Bl6snVr6snUGTqoq/oov0HcNPNlw0c6DbyrXyrFyrXyoNWF2VGKuyC2JRCJQEggAAAAAAAAAAAAAAAAAAA5XXAcqNSqFBDSja3dUdKDP1Y+tautZOtBm6KKt6VTQMNHOs2V+KDZzrXzrDzrXzoNuKvzWXnV+KC+JxVmrICTrkdAAAAAAAAAAAAAAAAAAAcHKDlQ1Uqr1QQ3WbpV26zdKCjpWTrWjrWTpQU7qmrN1VQM1biqItzQa+daudYedaeegb+emjFYuemnnoGrNWSqM1bmgtjqEqUBIcdAAAAAAAAAAAAAAABwCo0qNoOWq9VLVU7oIdKy9NLemmXpoFXSsvSremmfdBVuq7UtVACJ5quJSg0YrTz0x5q/Ggbuemnnpg56aeegbsaXZrJz0vxoGiVKVVmpygsjqEqUoJDjoAAAAAAAAAAA4AOWlqNoFqFpar1Qc1VG9J70z9NAh00y9NLOmmbpoFfTTPup7qrVBG1ErgDsAE81bigC/npp56cAacaaMaAF2dLc0ATlSlAHfXfQB0AHQAAAAAcABz1y0ARtRtAENaU70AKN7Z+mgBm6aZ96AFOqqtAEQAf/Z"
     t.string "profile_email", default: "example@gmail.com"
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 2019_05_08_013003) do
 
   create_table "projects", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "name", default: "Name"
-    t.string "url", default: "https://myprojecturl.com"
-    t.string "image", default: "https://organicthemes.com/wp-content/uploads/2013/10/website-construction.jpg"
-    t.string "description", default: "Formally written declaration of the project and its idea and context to explain the goals and objectives to be reached"
+    t.string "name", default: "Vsual Resume"
+    t.string "url", default: "https://www.vsualresume.com"
+    t.string "image", default: "https://g.foolcdn.com/editorial/images/494454/resume_gettyimages-587892248.jpg"
+    t.string "description", default: "Ruby on Rails, React JS & Redux, JWT"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resume_id"], name: "index_projects_on_resume_id"
@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 2019_05_08_013003) do
 
   create_table "resumes", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "template", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "template", default: 1
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
@@ -101,11 +101,10 @@ ActiveRecord::Schema.define(version: 2019_05_08_013003) do
 
   create_table "social_media", force: :cascade do |t|
     t.bigint "resume_id"
-    t.string "name", default: "MySocialMedia"
-    t.string "logo", default: "https://www.freelogodesign.org/Content/img/logo-ex-7.png"
+    t.string "name", default: "linkedin"
+    t.string "link", default: "https://www.linkedin.com/in/celestinosalim/"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "link"
     t.index ["resume_id"], name: "index_social_media_on_resume_id"
   end
 
